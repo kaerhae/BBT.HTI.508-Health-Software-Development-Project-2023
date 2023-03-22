@@ -21,6 +21,7 @@ class ClientService():
 
     def all_users(self):
         url = self.url + "/Patient?_format=json"
+        print(url)
         response = requests.get(url,
                                 auth=(self.username, self.password))
         return response.json()
