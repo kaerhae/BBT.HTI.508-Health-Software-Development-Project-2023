@@ -31,4 +31,7 @@ class ClientService():
         response = requests.get(url,
                                 auth=(self.username, self.password))
         return response.json()
+    
+    def fetch_medical_record():
+        return 0
         
