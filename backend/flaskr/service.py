@@ -27,11 +27,9 @@ class ClientService():
         return response.json()
 
     def filter_by_id(self, id):
-        url = self.url + "/Patient/" + id + "?_format=json"
+        url = self.url + "/Patient/" + id + "$everything?_format=json"
         response = requests.get(url,
                                 auth=(self.username, self.password))
         return response.json()
     
-    def fetch_medical_record():
-        return 0
         
