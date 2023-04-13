@@ -2,9 +2,13 @@ from flask import Flask, send_from_directory
 from service import ClientService
 import settings
 import os
+
+from flask_cors import CORS
+  
 #Initializing app
 app = Flask(__name__)
-print(settings.PASSWORD)
+CORS(app)
+
 #Initializing client service library from ./service.py file. 
 # Defining url, username and password parameters. Parameters are imported from settings.py
 s = ClientService(
