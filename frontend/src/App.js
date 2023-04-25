@@ -20,7 +20,7 @@ const App = () => {
     const initPatient = async () => {
       try {
         const response = await axios.get('http://127.0.0.1:5000/api/patients');
-        setPatients(response.data)
+        setPatients(response.data.entry)
       } catch (error) {
         console.error(error);
       }
