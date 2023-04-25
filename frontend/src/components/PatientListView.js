@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './patientList.css';
 
 const PatientList = ({ patients, setPatients }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,11 +21,11 @@ const PatientList = ({ patients, setPatients }) => {
   );
 
   return (
-    <div>
+    <div className="container">
       <h1>Patient List</h1>
       <input
         type="search"
-        class="search"
+        className="search"
         placeholder="Search patients..."
         value={searchTerm}
         onChange={handleSearch}
@@ -48,7 +49,9 @@ const PatientList = ({ patients, setPatients }) => {
             ))
           ) : (
             <tr>
-              <td colSpan="3">No matching patients found</td>
+              <td colSpan="3" className="no-results">
+                No matching patients found
+              </td>
             </tr>
           )}
         </tbody>
@@ -58,5 +61,3 @@ const PatientList = ({ patients, setPatients }) => {
 };
 
 export default PatientList;
-
-
